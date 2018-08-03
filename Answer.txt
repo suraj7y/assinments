@@ -1,0 +1,23 @@
+Q5) Discuss . Multi-processing and Multi-threading in Python. What is GIL?
+Answer-Multi-theading basicaly shares memory and responsible for responsive UI and used for i/o bound application.
+In python it is library each thread will do specific task have its own stack memory thred are ussed for sppedup processing speed.
+multiprocessing-use for seperate memory space ,multiple CPU cores,bypasses GIL limitations in CPython, child process are killable.
+
+GIL-Applications written in programming languages with a GIL can be designed to use separate processes to achieve full parallelism, as each process has its own interpreter and in turn has its own GIL.
+
+Q3) For what problems will you absolutely use Java and not python?
+Answer-By using Jython we can do any thing in python that we can do in java.
+
+Q4) I can define a field in a django form in the following 2 ways:
+    class MyForm(forms.Form):
+        myfield = forms.ChoiceField(choices=[(u.id, u.username) for u in User.objects.filter(type="TYPE1")])
+
+    AND also as
+
+    class MyForm(forms.Form):
+        pass
+
+        def __init__(self, *args, **kwargs):
+            super(MyForm, self).__init__(*args, **kwargs)
+            self.fields['myfield'] = forms.ChoiceField(choices=[(u.id, u.username) for u in User.objects.filter(type="TYPE1")])
+Answer---- in second one we can pass tha value but in the first one we can not.
